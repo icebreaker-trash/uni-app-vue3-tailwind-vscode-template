@@ -1,16 +1,14 @@
 
 const _ = require('lodash')
 const plugin = require('tailwindcss/plugin')
-const defaultConfig = require('tailwindcss/stubs/defaultConfig.stub')
+// const defaultConfig = require('tailwindcss/stubs/defaultConfig.stub')
 // const boxShadowplugin = require('tailwindcss/lib/plugins/boxShadow')
 const escapeMap = {
   '\/': '-div-',
   '\.': '-dot-'
 }
-
-
 /**
- * 
+ * 转义工作
  * @param {string} str 
  * @returns {string}
  */
@@ -170,6 +168,8 @@ const emptyVariants = corePlugins.reduce((acc, cur) => {
 
 /** @type {import('@types/tailwindcss/tailwind-config').TailwindConfig} */
 module.exports = {
+  // 由于微信小程序会把 w-[750rpx] 中的中括号强制去除，所以不推荐开启此模式
+  // mode: 'jit',
   purge: {
     // 如果 development 下,wxss过大，可以一直开启 enabled
     // 默认在 NODE_ENV=production 下开启

@@ -1,7 +1,11 @@
 <template>
-  <view class="flex">
+  <view class="flex flex-col">
+    <!-- <image
+      class="logo w-[600rpx]"
+      src="../../static/logo.png"
+    ></image> -->
     <image
-      class="logo w-48 w-1-div-3"
+      class="logo w-16"
       src="../../static/logo.png"
     ></image>
     <view>
@@ -18,6 +22,7 @@ export default defineComponent({
       title: "hello",
     };
   },
+  mounted() {},
 });
 </script>
 
