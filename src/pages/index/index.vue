@@ -1,7 +1,7 @@
 <template>
   <view class="flex">
     <image
-      class="logo w-4"
+      class="logo w-48"
       src="../../static/logo.png"
     ></image>
     <view>
