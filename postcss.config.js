@@ -22,9 +22,12 @@ module.exports = {
     // [ WXSS 文件编译错误]
     //.focus-within\:sr-only:focus-within{
     // 不认识这个 \: 我们需要replace
+    // https://developers.weixin.qq.com/community/develop/doc/000ce8ba720c683326cb6b8215b000?highLine=wxss%2520%25E8%25BD%25AC%25E4%25B9%2589
     require('postcss-class-rename')({
-      '\\\\:': '--',
-      '\\\\/': '_',
+      '\\\\\:': '-colon-',
+      // '\\\\/': '_',
+      '\\\\\.': '-dot-'
     })
   ]
+  //-dot-inset-0\-dot-5{
 }
