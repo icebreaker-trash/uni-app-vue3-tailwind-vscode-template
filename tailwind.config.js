@@ -1,11 +1,23 @@
-// const defaultConfig = require('tailwindcss/stubs/defaultConfig.stub')
-// const boxShadowplugin = require('tailwindcss/lib/plugins/boxShadow')
+
 const _ = require('lodash')
 const plugin = require('tailwindcss/plugin')
+const defaultConfig = require('tailwindcss/stubs/defaultConfig.stub')
+// const boxShadowplugin = require('tailwindcss/lib/plugins/boxShadow')
+const escapeMap = {
+  '\/': '-div-',
+  '\.': '-dot-'
+}
 
 
-function needEscaping(str) {
-  return ['\/', '\.'].includes()
+/**
+ * 
+ * @param {string} str 
+ * @returns {string}
+ */
+function escape(str) {
+  return Object.entries(escapeMap).reduce((acc, [key, value]) => {
+    return _.replace(acc, key, value)
+  }, str)
 }
 
 const corePlugins = [
@@ -71,13 +83,13 @@ const corePlugins = [
   // 'fontFamily',
   //#endregion
   'fontWeight',
-  'height',
+  //'height',
   'fontSize',
   'lineHeight',
   'listStylePosition',
   'listStyleType',
-  'margin',
-  'maxHeight',
+  // 'margin',
+  // 'maxHeight',
   'maxWidth',
   'minHeight',
   'minWidth',
@@ -87,12 +99,13 @@ const corePlugins = [
   'outline',
   'overflow',
   'overscrollBehavior',
-  'padding',
+  //'padding',
   'placeholderColor',
   'placeholderOpacity',
   'pointerEvents',
   'position',
-  'inset',
+
+  // 'inset', // 用不着
   'resize',
   // 'boxShadow', // *,::before,::after 限制
   //'ringWidth', // *,::before,::after 限制
@@ -121,7 +134,7 @@ const corePlugins = [
   'visibility',
   'whitespace',
   'wordBreak',
-  'width',
+  // 'width',
   'zIndex',
   //#region  网格布局
   // 'gap',
@@ -141,7 +154,7 @@ const corePlugins = [
   'transformOrigin',
   'scale',
   'rotate',
-  'translate',
+  // 'translate', 没啥用
   'skew',
   'transitionProperty',
   'transitionTimingFunction',
@@ -160,7 +173,7 @@ module.exports = {
   purge: {
     // 如果 development 下,wxss过大，可以一直开启 enabled
     // 默认在 NODE_ENV=production 下开启
-    enabled: false,
+    enabled: true,
     content: ['./public/index.html', './src/**/*.{vue,js,ts,jsx,tsx,wxml}']
   },
   darkMode: false, // 'class', // or 'media' or 'class'
@@ -176,14 +189,23 @@ module.exports = {
   },
   plugins: [
     plugin(function ({ addUtilities, addComponents, addBase, addVariant, e, prefix, config, theme, variants, postcss }) {
-      const heightUtilities = _.map(config('theme.height'), (value, key) => {
-        return {
-          [`.${e(`h-${key}`)}`]: {
-            transform: `h(${value})`
+      // delve(object, keypath, [default]) 类似于get，找不到 'theme.height' 会从 defaultConfig里面找
+      function escapeUtilities(path, prefix, attrKey) {
+        const utilities = _.map(config(path), (value, key) => {
+          const str = escape(`${prefix}${key}`)
+          return {
+            [`.${e(str)}`]: {
+              [attrKey]: `${value}`
+            }
           }
-        }
-      })
-      addUtilities(heightUtilities)
+        })
+        addUtilities(utilities)
+      }
+      escapeUtilities('theme.height', 'h-', 'height')
+      escapeUtilities('theme.margin', 'm-', 'margin')
+      escapeUtilities('theme.maxHeight', 'max-h-', 'max-height')
+      escapeUtilities('theme.padding', 'p-', 'padding')
+      escapeUtilities('theme.width', 'w-', 'width')
     }),
   ],
 }

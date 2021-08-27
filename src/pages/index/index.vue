@@ -1,7 +1,7 @@
 <template>
   <view class="flex">
     <image
-      class="logo w-48"
+      class="logo w-48 w-1-div-3"
       src="../../static/logo.png"
     ></image>
     <view>
@@ -22,8 +22,4 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-// 小程序不需要 'base' 'components'，里面标签是给 html 准备的
-// @import 'tailwindcss/base';
-// @import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
 </style>
