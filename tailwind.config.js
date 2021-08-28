@@ -1,8 +1,6 @@
 
-const _ = require('lodash')
 const plugin = require('tailwindcss/plugin')
-// const defaultConfig = require('tailwindcss/stubs/defaultConfig.stub')
-// const boxShadowplugin = require('tailwindcss/lib/plugins/boxShadow')
+
 const escapeMap = {
   '\/': '-div-',
   '\.': '-dot-'
@@ -14,7 +12,7 @@ const escapeMap = {
  */
 function escape(str) {
   return Object.entries(escapeMap).reduce((acc, [key, value]) => {
-    return _.replace(acc, key, value)
+    return acc.replace(key, value)
   }, str)
 }
 
@@ -191,7 +189,7 @@ module.exports = {
     plugin(function ({ addUtilities, addComponents, addBase, addVariant, e, prefix, config, theme, variants, postcss }) {
       // delve(object, keypath, [default]) 类似于get，找不到 'theme.height' 会从 defaultConfig里面找
       function escapeUtilities(path, prefix, attrKey) {
-        const utilities = _.map(config(path), (value, key) => {
+        const utilities = Object.entries(config(path)).map(([key, value]) => {
           const str = escape(`${prefix}${key}`)
           return {
             [`.${e(str)}`]: {
