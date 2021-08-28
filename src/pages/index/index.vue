@@ -10,6 +10,7 @@
     ></image>
     <view class="w-1-div-4">w-1/4</view>
     <view class="w-1-div-5">
+      <view class="w-0-dot-5">12345</view>
       <text class="title">{{ title }}</text>
     </view>
   </view>
