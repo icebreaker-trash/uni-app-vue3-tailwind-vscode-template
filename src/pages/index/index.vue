@@ -1,5 +1,5 @@
 <template>
-  <view class="flex flex-col">
+  <view class="flex flex-col items-center py-4">
     <!-- <image
       class="logo w-[600rpx]"
       src="../../static/logo.png"
