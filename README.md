@@ -9,3 +9,10 @@
 由于受到 `@vue/cli-service` `4.x`版本中 `postcss 7.x` 的限制 ,
 
 所以使用了`@tailwindcss/postcss7-compat`这个版本，来兼容 `postcss7`
+
+## 快速开始
+
+本项目已经集成 `weapp-ide-cli` 可以通过 `cli` 对 `ide` 进行额外操作，[详细信息](https://www.npmjs.com/package/weapp-ide-cli)
+
+
+
