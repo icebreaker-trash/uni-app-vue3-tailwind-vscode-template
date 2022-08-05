@@ -1,8 +1,8 @@
 # uni-app vue3 tailwindcss 模板
-
+<!-- 
 `webpack4` 版本的 `vue3` 模板已被废弃，请移步 `vite` 版本的 `vue3` 模板:
 
-[uni-app-vite-vue3-tailwind-vscode-template](https://github.com/sonofmagic/uni-app-vite-vue3-tailwind-vscode-template)
+[uni-app-vite-vue3-tailwind-vscode-template](https://github.com/sonofmagic/uni-app-vite-vue3-tailwind-vscode-template) -->
 
 > 已经支持 tailwindcss jit 模式!
 

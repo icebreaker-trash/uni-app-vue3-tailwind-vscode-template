@@ -1006,10 +1006,10 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@dcloudio/types@2.5.17":
-  version "2.5.17"
-  resolved "https://registry.yarnpkg.com/@dcloudio/types/-/types-2.5.17.tgz#6a5ecf0f05fc7bf3cf3e43a30dbe7e97262630ab"
-  integrity sha512-PMxXWdFOAmDQUo7BNx19O4htfaztdOT7RuD5jTVm8/jFcUd/hkNJJXLcSLePqXZwyTjjirstLBhC3FU709Y+8Q==
+"@dcloudio/types@2.6.12":
+  version "2.6.12"
+  resolved "https://registry.yarnpkg.com/@dcloudio/types/-/types-2.6.12.tgz#6c9559b9e65483f355dd61cb88fe8c14c8e61189"
+  integrity sha512-mrCMwcINy1IFjU9VUqLeWBkj404yWs5paLDttBcA+eqUjanuUQbBcTVPqlrGgkyzLXDcV2oDDZRSNxNpXi4kMQ==
 
 "@dcloudio/uni-app-plus@^2.0.1-33920220121003":
   version "2.0.1-35320220729001"
@@ -7913,10 +7913,10 @@ minipass@^3.1.1:
   dependencies:
     yallist "^4.0.0"
 
-miniprogram-api-typings@3.4.5:
-  version "3.4.5"
-  resolved "https://registry.yarnpkg.com/miniprogram-api-typings/-/miniprogram-api-typings-3.4.5.tgz#060e73b58ccc28db85ffb4ae60a838112866fb3e"
-  integrity sha512-GWvMdmPhJ40PLq4/sOh+n2xGRKf2R3kcuOaSe7IRTdT+Os8lfNrJYehYdgH7IoUWqaHqV8mFEWQj5oPIGhVv4Q==
+miniprogram-api-typings@3.5.0:
+  version "3.5.0"
+  resolved "https://registry.yarnpkg.com/miniprogram-api-typings/-/miniprogram-api-typings-3.5.0.tgz#7e33cf3a48f5f647c8222c3aa178b4fdf9b2d142"
+  integrity sha512-cS/uXJTMGKujwoaeEFFFKqpCf7qp3R7iuQZWagZAwhKA3Z7U/xlhOcI3i1wqN+uo4YODg3AG1j2zCe1PDa9Wtg==
 
 mississippi@^3.0.0:
   version "3.0.0"

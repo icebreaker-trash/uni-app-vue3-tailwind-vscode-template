@@ -70,7 +70,7 @@
   },
   "devDependencies": {
     "@babel/plugin-syntax-typescript": "^7.16.0",
-    "@dcloudio/types": "2.5.17",
+    "@dcloudio/types": "2.6.12",
     "@dcloudio/uni-automator": "^2.0.1-33920220121003",
     "@dcloudio/uni-cli-i18n": "^2.0.1-33920220121003",
     "@dcloudio/uni-cli-shared": "^2.0.1-33920220121003",
@@ -92,7 +92,7 @@
     "cross-env": "^7.0.2",
     "jest": "^27.5.1",
     "mini-types": "*",
-    "miniprogram-api-typings": "3.4.5",
+    "miniprogram-api-typings": "3.5.0",
     "postcss": "7",
     "postcss-comment": "^2.0.0",
     "postcss-rem-to-responsive-pixel": "^5.1.1",
