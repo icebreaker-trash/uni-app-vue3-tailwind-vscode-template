@@ -2,7 +2,7 @@ process.env.UNI_USING_VUE3 = true;
 process.env.UNI_USING_VUE3_OPTIONS_API = true;
 const { WeappTailwindcssDisabled } = require("./platform");
 const {
-  UniAppWeappTailwindcssWebpackPluginV4,
+  UnifiedWebpackPluginV5
 } = require("weapp-tailwindcss-webpack-plugin");
 
 /**
@@ -12,7 +12,7 @@ const config = {
   //....
   configureWebpack: {
     plugins: [
-      new UniAppWeappTailwindcssWebpackPluginV4({
+      new UnifiedWebpackPluginV5({
         disabled: WeappTailwindcssDisabled,
       }),
     ],
